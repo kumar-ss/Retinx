@@ -42,9 +42,14 @@ def lowlight_train(lowlight_enhance):
     train_low_data = []
     train_high_data = []
 
-    train_low_data_names = glob('./data/our485/low/*.png') + glob('./data/syn/low/*.png')
+    #train_low_data_names = glob('./data/our485/low/*.png') + glob('./data/syn/low/*.png')
+    train_low_data_names = glob ('./content/drive/My Drive/LOLI/LOLdataset/our485/low/*.png') + glob('./content/drive/My Drive/LOLI/LOLdataset/syn/low/*.png')
+
+   
     train_low_data_names.sort()
-    train_high_data_names = glob('./data/our485/high/*.png') + glob('./data/syn/high/*.png')
+    #train_high_data_names = glob('./data/our485/high/*.png') + glob('./data/syn/high/*.png')
+    train_high_data_names = glob('./content/drive/My Drive/LOLI/LOLdataset/our485/high/*.png') + glob('./content/drive/My Drive/LOLI/LOLdataset/syn/high/*.png')
+    
     train_high_data_names.sort()
     assert len(train_low_data_names) == len(train_high_data_names)
     print('[*] Number of training data: %d' % len(train_low_data_names))
