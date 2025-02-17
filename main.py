@@ -43,8 +43,16 @@ def lowlight_train(lowlight_enhance):
     lr[20:] = lr[0] / 10.0
 
     # Load training images
-    train_low_data_names = glob('./data/our485/low/*.png') + glob('./data/syn/low/*.png')
-    train_high_data_names = glob('./data/our485/high/*.png') + glob('./data/syn/high/*.png')
+   # train_low_data_names = glob('./data/our485/low/*.png') + glob('./data/syn/low/*.png')
+    #train_high_data_names = glob('./data/our485/high/*.png') + glob('./data/syn/high/*.png')
+
+        #train_low_data_names = glob('./data/our485/low/*.png') + glob('./data/syn/low/*.png')
+    train_low_data_names = glob ('content/drive/My Drive/Enhan/data/our485/low/*.png') + glob('content/drive/My Drive/Enhan/data/syn/low/*.png')
+
+   
+    train_low_data_names.sort()
+    #train_high_data_names = glob('./data/our485/high/*.png') + glob('./data/syn/high/*.png')
+    train_high_data_names = glob('content/drive/My Drive/Enhan/data/our485/high/*.png') + glob('content/drive/My Drive/Enhan/data/syn/high/*.png')
 
     train_low_data_names.sort()
     train_high_data_names.sort()
@@ -55,7 +63,7 @@ def lowlight_train(lowlight_enhance):
     train_low_data = [load_images(img) for img in train_low_data_names]
     train_high_data = [load_images(img) for img in train_high_data_names]
 
-    eval_low_data = [load_images(img) for img in glob('./data/eval/low/*.*')]
+    eval_low_data = [load_images(img) for img in glob('./content/drive/My Drive/Enhan/data/eval/low/*.*')]
 
     # Train the model
     lowlight_enhance.train(
